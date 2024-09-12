@@ -1,7 +1,10 @@
+__import__("0-add")
 #!/usr/bin/python3
 
 if __name__ == "__main__":
     from add_0 import add
+
     a = 1
     b = 2
-    print(f"{int(a)} + {int(b)} = {add(a,b)}")
+    sum = add(a, b)
+    print(f"{a} + {b} = {sum}")
