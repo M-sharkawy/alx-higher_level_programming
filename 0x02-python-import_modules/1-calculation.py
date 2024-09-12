@@ -2,7 +2,7 @@
 
 if __name__ == "__main__":
     """the sum, difference, multiple and quotient"""
-    from calculator_1.py import add, sub, mul, div
+    from calculator_1 import add, sub, mul, div
     a = 10
     b = 5
     print("{} + {} = {}".format(a, b, add(a, b)))
