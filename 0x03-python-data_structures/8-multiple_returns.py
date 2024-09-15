@@ -2,10 +2,9 @@
 
 
 def multiple_returns(sentence):
-    if sentence == None:
+    if sentence is None:
         return None
     else:
         lenght = len(sentence)
         f_char = sentence[0]
-    
-    return(lenght, f_char)
+        return(lenght, f_char)
