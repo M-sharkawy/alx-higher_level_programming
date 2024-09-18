@@ -10,6 +10,8 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>\n")
         sys.exit(1)
 
+    operators = { "+" : add, "-" : sub, "*" : mul, "/" : div}
+    
     if sys.argv[2] not in ["+", "-", "*", "/"]:
         print("Unknown operator. Available operators: +, -, * and /\n")
         sys.exit(1)
