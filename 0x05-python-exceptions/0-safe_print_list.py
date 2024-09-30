@@ -2,16 +2,14 @@
 
 
 def safe_print_list(my_list=[], x=0):
-	"""function that prints x elements of a list"""
-	index = 0
+    index = 0
 
-	try:
-		while index < x:
-			print("{:d}".format(my_list[index]), end="")
-			index += 1
+    try:
+        while index < x:
+            print("{:d}".format(my_list[index]), end="")
+            index += 1
+    except IndexError:
+        pass
 
-	except IndexError:
-		pass
-	
-	print()
-	return index
+    print()
+    return index
