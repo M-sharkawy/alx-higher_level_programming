@@ -72,8 +72,9 @@ class Square:
         Returns the area of a Square
         """
         return (self._size ** 2)
+
     def my_print(self):
-        """"""
+        """print square of #"""
         if self.size <= 0:
             print()
         else:
