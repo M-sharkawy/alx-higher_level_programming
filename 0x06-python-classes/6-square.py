@@ -11,27 +11,31 @@ class Square:
     Parameters
     ----------
     size (int) : size of the square.
+    position (int): position of tuple
 
     Methods
     -------
     area(): Returns the area of square
+    position(): Return the position
 
     Raises:
     -------
         TypeError: if value is not an int
         ValueError: if value is less than 0
     """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Constructs all the necessary attributes for the square object.
 
         Parameters
         ----------
         size (int) : size of the square.
+        position (int) : tuple
 
         Methods
         -------
         area(): Returns the area of square
+        position() : Return position
 
         Raises:
         -------
@@ -39,6 +43,7 @@ class Square:
             ValueError: if value is less than 0
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -64,6 +69,31 @@ class Square:
         else:
             self._size = value
 
+    @property
+    def position(self):
+        """ makes the private attribute to be used in class """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """set the size of the square
+                    ...
+            Args:
+            -----
+                value (int) : tuple poistion
+            Raises:
+            -------
+                TypeError: position must be a tuple of 2 positive integers
+            """
+        if type(value) is not tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(value[1]) is not int or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(value[0]) is not int or value[0] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
+
     def area(self):
         """
         Returns the area of a Square
@@ -75,5 +105,7 @@ class Square:
         if self.size <= 0:
             print()
         else:
-            for n in range(self.size):
-                print("#" * self.size)
+            for i in range(self.__position[1]):
+                print("")
+            for i in range(self.__size):
+                print(" " * self.__position[0] + '#' * self.__size)
