@@ -1,0 +1,53 @@
+============================
+this is 'print_square' module
+============================
+
+this module function that prints a square with the character #.
+
+=====================
+Usage : 'print_square'
+=====================
+
+import function from the module
+    >>> print_square = __import__('4-print_square').print_square
+
+test_1 normal case:
+    >>> print_square(2)
+    ##
+    ##
+
+test_2 size is not int:
+    >>> print_square("a")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+test_3 size is not float and lower than zero:
+    >>> print_square(-0.3)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+test_4 size is less than zero:
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+test_5 size is None:
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+test_6 size is nan:
+    >>> print_square(float("nan"))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+test_7 size is inf:
+    >>> print_square(float("inf"))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer

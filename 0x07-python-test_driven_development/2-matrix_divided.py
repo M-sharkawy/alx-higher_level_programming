@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""this module  divides all elements of a matrix """
+"""this module  divides all elements of a matrix"""
 
 
 def matrix_divided(matrix, div):
@@ -27,17 +27,21 @@ def matrix_divided(matrix, div):
 
     new_matrix = []
 
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix" +
+                            " (list of lists) of integers/floats") 
+
     for row in matrix:
         if type(row) != list or len(row) == 0:
             raise TypeError("matrix must be a matrix" +
-                            "(list of lists) of integers/floats")
+                            " (list of lists) of integers/floats")
         if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
         new_row = []
         for i in row:
             if not isinstance(i, (int, float)):
                 raise TypeError("matrix must be a matrix" +
-                                "(list of lists) of integers/floats")
+                                " (list of lists) of integers/floats")
             new_row.append(round(i / div, 2))
 
         new_matrix.append(new_row)

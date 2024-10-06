@@ -1,0 +1,52 @@
+============================
+this is 'say_my_name' module
+============================
+
+this module function prints My name is <first name> <last name>
+
+=====================
+Usage : 'say_my_name'
+=====================
+
+import function from the module
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+test_1 normal case:
+    >>> say_my_name("ahmed", "ali")
+    My name is ahmed ali
+
+test_2 first_name arg is not string:
+    >>> say_my_name(4, "ali")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test_3 last_name arg is not string:
+    >>> say_my_name("ahmed", 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+test_4 first_name arg is None:
+    >>> say_my_name(None, "ali")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test_5 last_name arg is None:
+    >>> say_my_name("ahmed", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+test_6 last_name arg is 'int':
+    >>> say_my_name("ahmed", float("inf"))
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+test_7 first_name arg is nan:
+    >>> say_my_name(float("nan"), "ali")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string

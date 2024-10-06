@@ -1,0 +1,71 @@
+===========================
+the 'matrix_divided' module
+===========================
+
+this module  divides all elements of a matrix
+
+=======================
+Usage: 'matrix_divided'
+=======================
+
+import function from the module
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+test_1 Normal case:
+    >>> print(matrix_divided([[1,2,3], [2,3,4], [3,4,5]], 4))
+    [[0.25, 0.5, 0.75], [0.5, 0.75, 1.0], [0.75, 1.0, 1.25]]
+
+test_2 first elements is not a list:
+    >>> print(matrix_divided([3, [1, 2, 3]], 4))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+test_3 list div by 0:
+    >>> print(matrix_divided([[1,2,3], [2,3,4]], 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+test_4 Rows are not the same size in the matrix:
+    >>> matrix = [[1, 2, 3], [2, 1]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+test_5 div is neither int nor float:
+    >>> matrix = [[1, 2, 3], [2, 5, 1]]
+    >>> print(matrix_divided(matrix, "l"))
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+test_6  div = 0:
+    >>> matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+test_7 None in matrix:
+    >>> print(matrix_divided(None, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+test_8 div is None in matrix:
+    >>> matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+test_9  div of float('inf'):
+    >>> matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> print(matrix_divided(matrix, float('inf')))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+test_10 divi by nan:
+    >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('nan'))
+    [[nan, nan, nan], [nan, nan, nan]]

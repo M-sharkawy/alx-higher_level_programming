@@ -23,10 +23,17 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     result = ""
+    space_skip = False
 
     for letter in text:
+        if space_skip and letter == " ":
+            continue
+        else:
+            space_skip = False
+
         result += letter
         if letter in ".?:":
             result += "\n\n"
+            space_skip = True
 
     print(result.strip())
