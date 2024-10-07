@@ -74,6 +74,7 @@ class Rectangle:
             return (self.__height + self.__width) * 2
 
     def __str__(self):
+        """print rectangle of #"""
         line = ""
         if self.__width == 0 or self.__height == 0:
             return line
@@ -85,4 +86,5 @@ class Rectangle:
         return line
 
     def __repr__(self):
+        """retrun rectangle attributies"""
         return f"Rectangle({self.__width}, {self.__height})"
