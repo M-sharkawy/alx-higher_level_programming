@@ -85,12 +85,4 @@ class Rectangle:
         return line
 
     def __repr__(self):
-        line = ""
-        if self.__width == 0 or self.__height == 0:
-            return line
-        for x in range(self.__height):
-            for y in range(self.__width):
-                line += "#"
-            if x != self.__height - 1:
-                line += "\n"
-        return line
+        return f"Rectangle({self.__width}, {self.__height})"
