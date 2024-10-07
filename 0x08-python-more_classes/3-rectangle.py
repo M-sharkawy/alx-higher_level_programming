@@ -77,9 +77,9 @@ class Rectangle:
         line = ""
         if self.__width == 0 or self.__height == 0:
             return line
-        for i in range(self.__height):
-            for j in range(self.__width):
+        for x in range(self.__height):
+            for y in range(self.__width):
                 line += "#"
-            if i != self.__height - 1:
+            if x != self.__height - 1:
                 line += "\n"
         return line
