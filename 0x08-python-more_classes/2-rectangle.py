@@ -21,6 +21,13 @@ class Rectangle:
         ValueError: height must be >= 0
     """
     def __init__(self, width=0, height=0):
+        """
+        Creates new instances of Rectangle.
+
+        args:
+            width (int): rectangle width
+            height (int): rectangle height
+        """
         self.width = width
         self.height = height
 
