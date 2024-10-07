@@ -11,8 +11,8 @@ class Rectangle:
         height (int): rectangle height
 
     Methods:
-        area(): function to retreive area of the triangle
-        perimeter(): function to retrieve perimeter of the triangle
+        area(): function to retreive area of the rectangle
+        perimeter(): function to retrieve perimeter of the rectangle
 
     Raises:
         TypeError: width must be an integer
@@ -41,7 +41,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """reterieve the height of the triangle"""
+        """reterieve the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -55,12 +55,12 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        """retreive area of the triangle"""
-        return(self.width * self.height)
+        """retreive area of the rectangle"""
+        return(self.__width * self.__height)
 
     def perimeter(self):
-        """retrieve the perimeter of the triangle"""
-        if self.width == 0 or self.height == 0:
+        """retrieve the perimeter of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
             return(0)
         else:
-            return(self.width + self.height) * 2
+            return(self.__width + self.__height) * 2

@@ -13,6 +13,7 @@ class Rectangle:
     Methods:
         area(): function to retreive area of the rectangle
         perimeter(): function to retrieve perimeter of the rectangle
+        str(): print rectangle of "#"
 
     Raises:
         TypeError: width must be an integer
@@ -56,24 +57,24 @@ class Rectangle:
 
     def area(self):
         """retreive area of the rectangle"""
-        return(self.width * self.height)
+        return(self.__width * self.__height)
 
     def perimeter(self):
         """retrieve the perimeter of the rectangle"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return(0)
         else:
-            return(self.width + self.height) * 2
+            return(self.__width + self.__height) * 2
 
     def __str__(self):
         """print rectangle of #"""
         line = ""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return(line)
         else:
-            for x in range(self.height):
-                for y in range(self.width):
+            for x in range(self.__height):
+                for y in range(self.__width):
                     line += "#"
-                if x != self.height - 1:
+                if x != self.__height - 1:
                     line += "\n"
             return line
