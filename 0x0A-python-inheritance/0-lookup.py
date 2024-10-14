@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-"""module to return all the attribute of an objects """
+
+"""module for lookup function """
 
 
 def lookup(obj):
-    """function return all the attr. and methods of an object"""
-    return(dir(obj))
+    """
+    function return all the attr. and methods of an object
+
+    args:
+        obj: object
+    """
+    return (dir(obj))
