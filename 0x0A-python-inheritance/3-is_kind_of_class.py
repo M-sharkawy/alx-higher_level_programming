@@ -3,7 +3,7 @@
 """module for 'is_same_class' function """
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """Return TRUE or FALSE according to type of class
 
     args:
