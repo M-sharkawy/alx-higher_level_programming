@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""module for 'is_same_class' function """
+"""module for 'is_kind_of_class' function """
 
 
 def is_kind_of_class(obj, a_class):
