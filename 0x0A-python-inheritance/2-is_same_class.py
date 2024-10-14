@@ -9,8 +9,11 @@ def is_same_class(obj, a_class):
     an instance of the specified class ;
     otherwise False
 
-    args:
-        obj: object, a_class
+    obj: object import
+        a_class: class type
+
+    Return:
+        True or False
     """
     if type(obj) == a_class:
         return True
