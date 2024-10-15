@@ -8,7 +8,5 @@ def load_from_json_file(filename):
     import json
 
     with open(filename, "r") as f:
-        for line in f:
-            file = line
-        data = json.load(file)
+        data = json.loads(f)
     return (data)
