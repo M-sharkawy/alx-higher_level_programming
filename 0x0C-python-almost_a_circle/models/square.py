@@ -54,5 +54,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns the dict representation of the square instance"""
-        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
+        dictionary = {}
+        for index in ["id", "size", "x", "y"]:
+            dictionary[index] = getattr(self, index)
+        return dictionary
                         

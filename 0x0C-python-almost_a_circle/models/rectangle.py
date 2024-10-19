@@ -126,8 +126,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dict representation of Rectangle instance"""
-        return {'x': self.x,
-                'y': self.y,
-                'id': self.id,
-                'height': self.height,
-                'width': self.width}
+        dictionary = {}
+        for index in ["id", "width", "height", "x", "y"]:
+            dictionary[index] = getattr(self, index)
+        return dictionary
