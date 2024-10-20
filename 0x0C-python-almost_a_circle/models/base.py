@@ -37,5 +37,5 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return "[]"
         else:
-            str_dict = json.dumps(json_string)
+            str_dict = json.loads(json_string)
             return str_dict
