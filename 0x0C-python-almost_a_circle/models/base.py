@@ -44,8 +44,6 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """saves list of instance to a file"""
-        import json
-
         if list_objs is None or list_objs == 0:
             return "[]"
         else:
@@ -54,3 +52,15 @@ class Base:
             json_str = cls.to_json_string(my_list)
             with open(f"{cls.__name__}.json", "w",encoding="UTF-8") as f:
                 f.write(json_str)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Creates an instance with all attributes set based on the dictionary."""
+        if cls.__name__ == 'Rectangle':
+             dummy = cls(1,1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+
+        dummy.update(**dictionary)
+
+        return dummy
