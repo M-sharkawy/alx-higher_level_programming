@@ -32,6 +32,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """method converts json to str"""
         import json
 
         if json_string is None or len(json_string) == 0:
@@ -39,3 +40,17 @@ class Base:
         else:
             str_dict = json.loads(json_string)
             return str_dict
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """saves list of instance to a file"""
+        import json
+
+        if list_objs is None or list_objs == 0:
+            return "[]"
+        else:
+            my_list = []
+            my_list = [obj.to_dictionary() for obj in list_objs]
+            json_str = cls.to_json_string(my_list)
+            with open(f"{cls.__name__}.json", "w",encoding="UTF-8") as f:
+                f.write(json_str)
