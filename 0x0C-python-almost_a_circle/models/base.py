@@ -64,3 +64,16 @@ class Base:
         dummy.update(**dictionary)
 
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        with open(f"{cls.__name__}.json", "r", encoding="UTF-8") as file:
+            if file is None:
+                return []
+            else:
+                my_list = []
+                instance_list = []
+                my_list = cls.from_json_string(file.read())
+                for i in my_list:
+                    instance_list.append(cls.create(**i))
+                return instance_list
