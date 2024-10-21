@@ -1,7 +1,5 @@
 #!usr/bin/python3
-
 """module of Squar Class inherits from the Rectangle"""
-
 from models.rectangle import Rectangle
 
 
@@ -22,10 +20,6 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """size setter value"""
-        if int(value) <= 0:
-            raise ValueError("width must be > 0")
-        if type(value) != int:
-            raise TypeError("width must be an integer")
         self.width = value
         self.height = value
 
