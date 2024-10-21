@@ -8,8 +8,8 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Squar Class inherits from the Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size ,size, x, y, id)
-    
+        super().__init__(size, size, x, y, id)
+
     def __str__(self):
         """string representation of the instances"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
@@ -32,7 +32,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """update the attributs according to the input"""
         if args:
-            for i,arg in enumerate(args):
+            for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg
                 if i == 1:
@@ -58,4 +58,3 @@ class Square(Rectangle):
         for index in ["id", "size", "x", "y"]:
             dictionary[index] = getattr(self, index)
         return dictionary
-                        

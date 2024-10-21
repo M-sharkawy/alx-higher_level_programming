@@ -37,7 +37,7 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         if type(width) != int:
             raise TypeError("width must be an integer")
-        
+
         self.__width = width
 
     @property
@@ -94,35 +94,42 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width, end="")
             print()
-    
+
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        """Function that display instance in string format"""
+        id = self.id
+        width = self.width
+        height = self.height
+        x = self.x
+        y = self.y
+        return f"[Rectangle] ({id}) {x}/{y} - {width}/{height}"
 
     def update(self, *args, **kwargs):
-            if args:
-                for index, arg in enumerate(args):
-                    if index == 0:
-                        self.id = arg
-                    if index == 1:
-                        self.__width = arg
-                    if index == 2:
-                        self.__height = arg
-                    if index == 3:
-                        self.__x = arg
-                    if index == 4:
-                        self.__y = arg
-            else:
-                for key, value in kwargs.items():
-                    if key == "id":
-                        self.id = value
-                    if key == "width":
-                        self.__width = value
-                    if key == "height":
-                        self.__height = value
-                    if key == "x":
-                        self.__x = value
-                    if key == "y":
-                        self.__y = value
+        """update method to update attribute"""
+        if args:
+            for index, arg in enumerate(args):
+                if index == 0:
+                    self.id = arg
+                if index == 1:
+                    self.__width = arg
+                if index == 2:
+                    self.__height = arg
+                if index == 3:
+                    self.__x = arg
+                if index == 4:
+                    self.__y = arg
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.__width = value
+                if key == "height":
+                    self.__height = value
+                if key == "x":
+                    self.__x = value
+                if key == "y":
+                    self.__y = value
 
     def to_dictionary(self):
         """returns the dict representation of Rectangle instance"""

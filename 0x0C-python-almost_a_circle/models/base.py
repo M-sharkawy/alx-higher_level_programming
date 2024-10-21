@@ -18,7 +18,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
@@ -50,14 +50,15 @@ class Base:
             my_list = []
             my_list = [obj.to_dictionary() for obj in list_objs]
             json_str = cls.to_json_string(my_list)
-            with open(f"{cls.__name__}.json", "w",encoding="UTF-8") as f:
+            with open(f"{cls.__name__}.json", "w", encoding="UTF-8") as f:
                 f.write(json_str)
 
     @classmethod
     def create(cls, **dictionary):
-        """Creates an instance with all attributes set based on the dictionary."""
+        """Creates an instance with all
+        attributes set based on the dictionary."""
         if cls.__name__ == 'Rectangle':
-             dummy = cls(1,1)
+            dummy = cls(1, 1)
         elif cls.__name__ == 'Square':
             dummy = cls(1)
 
