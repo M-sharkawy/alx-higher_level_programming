@@ -25,7 +25,7 @@ class Base:
         import json
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return []
+            return "[]"
         else:
             my_dict = json.dumps(list_dictionaries)
             return my_dict
@@ -36,7 +36,7 @@ class Base:
         import json
 
         if json_string is None or len(json_string) == 0:
-            return []
+            return "[]"
         else:
             str_dict = json.loads(json_string)
             return str_dict
