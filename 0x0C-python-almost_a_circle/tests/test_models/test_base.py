@@ -11,7 +11,7 @@ import json
 class Test_base(unittest.TestCase):
     """tests for base class"""
     def setUp(self):
-        Base.__nb_objects(0)
+        Base._Base__nb_objects = 0
 
     def test_input_id(self):
         INS = Base(12)
