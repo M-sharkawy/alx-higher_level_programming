@@ -64,7 +64,7 @@ class RectangleTest(unittest.TestCase):
         function with *args......"""
         rc = Rectangle(10, 10, 10, 10)
         rc.update(92, 15, 20, 16, 12)
-        msg = "[Rectangle] (92) 13/12 - 16/20"
+        msg = "[Rectangle] (92) 16/12 - 15/20"
         self.assertEqual(str(rc), msg)
 
     def test_kwargs_update(self):
