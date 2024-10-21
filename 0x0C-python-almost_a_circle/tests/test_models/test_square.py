@@ -99,3 +99,6 @@ class SquareTest(unittest.TestCase):
         list_output = Square.from_json_string(None)
         result = []
         self.assertEqual(list_output, result)
+
+if __name__ == "__main__":
+    unittest.main()
