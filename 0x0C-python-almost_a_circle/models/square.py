@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """module of Squar Class inherits from the Rectangle"""
 from models.rectangle import Rectangle
 
