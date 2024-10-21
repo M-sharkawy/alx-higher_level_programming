@@ -7,6 +7,7 @@ import unittest
 from models.base import Base
 import json
 
+
 class Test_base(unittest.TestCase):
     """tests for base class"""
     def setUp(self):
@@ -54,6 +55,7 @@ class Test_base(unittest.TestCase):
         input = None
         expected = "[]"
         self.assertEqual(Base.to_json_string(input), expected)
+
 
 if __name__ == "__main__":
     unittest.main()

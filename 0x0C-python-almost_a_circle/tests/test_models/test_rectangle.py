@@ -325,5 +325,6 @@ class RectangleTest(unittest.TestCase):
         expected = {'x': 1, 'height': 2, 'width': 10, 'y': 9, 'id': 1}
         self.assertEqual(my_class.to_dictionary(), expected)
 
+
 if __name__ == "__main__":
     unittest.main()
