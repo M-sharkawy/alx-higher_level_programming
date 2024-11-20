@@ -5,5 +5,5 @@ SELECT
         s.name AS states
 FROM
     cities c
-INNER JOIN states s ON c.state_id = s.id
+LEFT JOIN states s ON c.state_id = s.id
 ORDER BY c.id ASC;
