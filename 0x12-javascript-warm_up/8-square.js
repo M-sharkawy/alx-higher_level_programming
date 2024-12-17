@@ -5,10 +5,10 @@ const num = parseInt(args[0],10);
 let ind = 0;
 
 if (isNaN(num)){
-    console.log("Missing siz")
+    console.log("Missing size");
 } else {
 for (ind; ind < args[0]; ind++)
 {
-    console.log("X" * 2);
+    console.log("X".repeat(args[0]));
 }
 }
