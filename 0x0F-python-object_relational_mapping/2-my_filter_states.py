@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module that takes in an argument and displays all values 
+"""module that takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa where name matches the argument."""
 
 import MySQLdb
@@ -18,7 +18,9 @@ if __name__ == "__main__":
     """Create a cursor object"""
     cursor = db.cursor()
 
-    order = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY states.id;".format(sys.argv[4])
+    order = "SELECT * \
+        FROM states \
+            WHERE BINARY name = '{}' ORDER BY states.id;".format(sys.argv[4])
     cursor.execute(order)
 
     """print the data fetched"""
