@@ -4,25 +4,21 @@
 import MySQLdb
 import sys
 
+"""Connect to the database"""
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    """Connect to the database"""
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user="username",
-        passwd="password",
-        db="database"
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
     """Create a cursor object"""
     cursor = db.cursor()
 
     """Execute the SQL query"""
-    cursor.execute("SELECT * FROM states ORDER BY states.id DESC")
+    cursor.execute("SELECT * FROM states ORDER BY states.id")
 
     """Fetch the results"""
     result = cursor.fetchall()
