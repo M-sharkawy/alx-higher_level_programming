@@ -21,7 +21,9 @@ if __name__ == "__main__":
     order = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY states.id;".format(sys.argv[4])
     cursor.execute(order)
 
+    """print the data fetched"""
     [print(row) for row in cursor.fetchall()]
 
+    """close opened database and cursor"""
     cursor.close()
     db.close()
