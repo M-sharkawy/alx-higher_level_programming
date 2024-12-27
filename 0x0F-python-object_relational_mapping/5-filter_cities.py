@@ -18,14 +18,14 @@ if __name__ == "__main__":
     """Create a cursor object"""
     cursor = db.cursor()
 
-    query = "SELECT c.id, c.name AS city_name, \
-        s.%s AS state_cities \
-            FROM cities c \
-                LEFT JOIN states s ON c.state_id = s.id ORDER BY c.id;"
+    query = "SELECT c.name FROM cities c \
+        INNER JOIN states s \
+            ON c.state_id = s.id WHERE BINARY s.name = %s ORDER BY c.id;"
     cursor.execute(query, (sys.argv[4],))
 
     """print the data fetched"""
-    [print(row) for row in cursor.fetchall()]
+    cities = [row[0] for row in cursor.fetchall()]
+    print(", ".join(cities))
 
     """close opened database and cursor"""
     cursor.close()
