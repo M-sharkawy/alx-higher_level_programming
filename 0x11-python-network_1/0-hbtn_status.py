@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""this module used Python script that fetches https://alx-intranet.hbtn.io/status"""
+"""this module used Python script that
+fetches https://alx-intranet.hbtn.io/status"""
 
 
 from urllib.request import urlopen
