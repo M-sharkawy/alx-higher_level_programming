@@ -16,7 +16,7 @@ if __name__ == "__main__":
     try:
         json_value = response.json()
         if json_value:
-            print(f"[{json_value.get("id")}] {json_value.get("name")}")
+            print(f"[{json_value.get('id')}] {json_value.get('name')}")
         else:
             print("No result")
     except ValueError:
